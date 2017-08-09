@@ -32,7 +32,7 @@ export class Formatter extends Lint.Formatters.AbstractFormatter {
       .reduce((lines: string[], fileName: string) => {
         lines.push(chalk.underline.yellow(fileName));
         const fileFailures = failuresByFile[fileName];
-        return lines.concat(fileFailures.map(this.formatFailure), ['\n']);
+        return lines.concat(fileFailures.map(this.formatFailure));
       }, [])
       .join('\n');
   }
